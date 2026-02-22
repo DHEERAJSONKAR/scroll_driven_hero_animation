@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+    cursor: none; /* Hide default cursor */
+  }
+  
+  body {
+    @apply m-0 p-0 font-sans antialiased;
+    @apply bg-gradient-primary;
+    @apply overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: auto; /* Let GSAP handle smooth scroll */
+  }
+
+  /* Selection colors */
+  ::selection {
+    background: rgba(106, 17, 203, 0.4);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-blue to-accent-purple;
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-gradient-card backdrop-blur-md;
+    @apply border border-white/10;
+    @apply shadow-2xl shadow-black/50;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+}
